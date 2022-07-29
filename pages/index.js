@@ -12,6 +12,7 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 // components
 import Navbar from "../components/Navbar";
+import Link from "../components/Link";
 
 export default function Home() {
   return (
@@ -36,12 +37,14 @@ export default function Home() {
               borderColor="gray.200"
               boxShadow="md"
             >
-              <Button colorScheme="black" variant="link" alignItems="center">
-                <Heading fontSize="20px">Title Transformer</Heading>
-                <span className="chakra-button__icon">
-                  <ArrowForwardIcon />
-                </span>
-              </Button>
+              <Link href="/change-title">
+                <Button colorScheme="black" variant="link" alignItems="center">
+                  <Heading fontSize="20px">Title Transformer</Heading>
+                  <span className="chakra-button__icon">
+                    <ArrowForwardIcon />
+                  </span>
+                </Button>
+              </Link>
               <Text marginTop={4}>A simple title transformation panel</Text>
             </Box>
             <Box
