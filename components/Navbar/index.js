@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import {
   Flex,
   Box,
@@ -10,6 +11,15 @@ import {
 } from "@chakra-ui/react";
 
 const Navbar = () => {
+  let { pathname } = useRouter();
+
+  const isNotMainMenu = pathname !== "/";
+
+  switch (pathname) {
+    case "/change-title":
+      pathname = "Title Transformer";
+  }
+
   return (
     <Box w="100%" color="black" padding="8px 16px" position="fixed" top={0}>
       <Flex alignItems="center">
@@ -19,8 +29,13 @@ const Navbar = () => {
         </div>
         <Breadcrumb margin="2px 0 0 20px">
           <BreadcrumbItem>
-            <BreadcrumbLink>Internship Program</BreadcrumbLink>
+            <BreadcrumbLink href="/">Internship Program</BreadcrumbLink>
           </BreadcrumbItem>
+          {isNotMainMenu && (
+            <BreadcrumbItem isCurrentPage>
+              <BreadcrumbLink>{pathname}</BreadcrumbLink>
+            </BreadcrumbItem>
+          )}
         </Breadcrumb>
       </Flex>
     </Box>
