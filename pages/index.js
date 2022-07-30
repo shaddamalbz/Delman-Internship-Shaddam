@@ -56,12 +56,14 @@ export default function Home() {
               boxShadow="md"
               ml={8}
             >
-              <Button colorScheme="black" variant="link">
-                <Heading fontSize="20px">User Fetcher</Heading>
-                <span className="chakra-button__icon">
-                  <ArrowForwardIcon />
-                </span>
-              </Button>
+              <Link href="/fetching">
+                <Button colorScheme="black" variant="link">
+                  <Heading fontSize="20px">User Fetcher</Heading>
+                  <span className="chakra-button__icon">
+                    <ArrowForwardIcon />
+                  </span>
+                </Button>
+              </Link>
               <Text marginTop={4}>
                 A simple API fetching and rendering process
               </Text>
