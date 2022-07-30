@@ -15,10 +15,8 @@ const Navbar = () => {
 
   const isNotMainMenu = pathname !== "/";
 
-  switch (pathname) {
-    case "/change-title":
-      pathname = "Title Transformer";
-  }
+  if (pathname === "/change-title") pathname = "Title Transformer";
+  if (pathname === "/fetching") pathname = "User Fetcher";
 
   return (
     <Box w="100%" color="black" padding="8px 16px" position="fixed" top={0}>
@@ -32,7 +30,7 @@ const Navbar = () => {
             <BreadcrumbLink href="/">Internship Program</BreadcrumbLink>
           </BreadcrumbItem>
           {isNotMainMenu && (
-            <BreadcrumbItem isCurrentPage>
+            <BreadcrumbItem>
               <BreadcrumbLink>{pathname}</BreadcrumbLink>
             </BreadcrumbItem>
           )}
